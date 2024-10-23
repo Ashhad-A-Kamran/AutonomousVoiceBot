@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 import os
 from deepgram import DeepgramClient, PrerecordedOptions
 import json
+# import flask_app
+
 load_dotenv()
 
 
@@ -11,9 +13,7 @@ DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
 
 #Speech-to-Text
 # We have to give the customer's voice to this AUDIO_URL which we are getting from 
-AUDIO_URL = {
-    "url": "https://static.deepgram.com/examples/Bueller-Life-moves-pretty-fast.wav"
-}
+AUDIO_URL = os.getenv("NGROK_URL")
 
 def main():
     try:
